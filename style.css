@@ -1,5 +1,4 @@
 /* Estilos básicos y responsivos */
-
 body {
     font-family: Arial, sans-serif;
     background: #f2f2f2;
@@ -16,6 +15,9 @@ body {
     box-shadow: 0 0 10px #ccc;
     border-radius: 8px;
     margin-top: 40px;
+
+    /* Animación de entrada */
+    animation: fadeIn 0.6s ease-out;
 }
 
 h1 {
@@ -32,6 +34,15 @@ h1 {
     border-radius: 5px;
     margin: 2px;
     cursor: pointer;
+
+    /* Transiciones suaves */
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Efecto visual al pasar el mouse por un botón */
+.btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
 }
 
 .btn.editar {
@@ -59,6 +70,14 @@ td, th {
     border-bottom: 1px solid #ddd;
 }
 
+/* Efecto visual al pasar el mouse sobre una fila de la tabla */
+tr:hover {
+    background-color: #ecf0f1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Diseño responsive para móviles */
 @media (max-width: 768px) {
     table, thead, tbody, th, td, tr {
         display: block;
@@ -80,5 +99,17 @@ td, th {
         left: 10px;
         text-align: left;
         font-weight: bold;
+    }
+}
+
+/* Animación de entrada (fadeIn) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
